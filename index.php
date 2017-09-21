@@ -44,7 +44,8 @@ if(strncmp($_SERVER['REQUEST_URI'],
 	$GLOBALS['config']['full_base_url'],
 	strlen($GLOBALS['config']['full_base_url'])) != 0){
 	$remaining_path = $GLOBALS['config']['full_base_url'];
-	$remaining_path = $remaining_path . substr($_SERVER['REQUEST_URI'], strlen($GLOBALS['config']['base_url']));
+	$tmpBase = rtrim($GLOBALS['config']['base_url']);
+	$remaining_path = $remaining_path . substr($_SERVER['REQUEST_URI'], strlen($GLOBALS['config']['base_url']) - 1);
 	header('location: http://' . $_SERVER['HTTP_HOST'] . $remaining_path);
 	exit;
 }
