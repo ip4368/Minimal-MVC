@@ -27,10 +27,7 @@ if(!file_exists($driver_file_path)){
 }
 include $driver_file_path;
 
-$GLOBALS['config']['full_base_url'] = $GLOBALS['config']['base_url'].$GLOBALS['config']['index_page'];
-if (substr($GLOBALS['config']['full_base_url'], -1) != "/"){
-	$GLOBALS['config']['full_base_url'] .= "/";
-}
+$GLOBALS['config']['full_base_url'] = rtrim($GLOBALS['config']['base_url'].$GLOBALS['config']['index_page'], '/');
 
 /**
  * check if the route is as expected in config file
@@ -65,15 +62,15 @@ include $GLOBALS['SYS_PATH'] . '/view.php';
 /*
  * parsing the path and parameters
  */
-$path_exclude_base = substr($_SERVER['REQUEST_URI'], strlen($GLOBALS['config']['full_base_url']) - 1);
+$path_exclude_base = substr($_SERVER['REQUEST_URI'], strlen($GLOBALS['config']['full_base_url']));
 $pos = strpos($path_exclude_base, '?');
 $curr_route = '';
 $params = array();
 if($pos === false){
-	$curr_route = substr($_SERVER['REQUEST_URI'], strlen($GLOBALS['config']['full_base_url']) - 1);
+	$curr_route = substr($_SERVER['REQUEST_URI'], strlen($GLOBALS['config']['full_base_url']));
 }else{
-	$curr_route = substr($_SERVER['REQUEST_URI'], strlen($GLOBALS['config']['full_base_url']) - 1, $pos);
-	$params_str = substr($_SERVER['REQUEST_URI'], strlen($GLOBALS['config']['full_base_url']) + $pos);
+	$curr_route = substr($_SERVER['REQUEST_URI'], strlen($GLOBALS['config']['full_base_url']), $pos);
+	$params_str = substr($_SERVER['REQUEST_URI'], strlen($GLOBALS['config']['full_base_url']) + $pos + 1);
 	parse_str($params_str, $params);
 }
 
