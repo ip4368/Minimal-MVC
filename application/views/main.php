@@ -9,6 +9,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</head>
 	<body>
 	<?php include($GLOBALS['APP_PATH'].'/views/header.php');?>
-	<h1><?php echo($greeting) ?></h1>
+	<h1><?php echo htmlentities($greeting) ?></h1>
 	</body>
 </html>

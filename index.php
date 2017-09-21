@@ -103,7 +103,7 @@ foreach ($matched_router->get_args() as $key => $value) {
 	$params[$key] = $value;
 }
 foreach ($params as $key => $value) {
-	echo $key . ' = ' . $value . "<br>\n";
+	echo htmlentities($key) . ' = ' . htmlentities($value) . "<br>\n";
 }
 echo 'using controller method ' . $matched_router->get_controller_method() . "<br>\n";
 
