@@ -1,7 +1,7 @@
 # Minimal MVC Framework
 This is a very minimal (buggy) MVC framework built by Daniel Ip (ip4368).
 
-This is built because Daniel took a database subject (INFO20003 Database System) in the University of Melbourne, which required students to write a very simple web app in PHP, without using any frameworks (neither frontend js framework nor backend php framework). The curious student was very confused and did not understand why framework is not allowed (the answer from lecturer was he wanted to see student rendering the html with PHP). I like things to be done in a managable way, it needs to be quick to build, but still managable.
+This is built because Daniel was taking a database subject (INFO20003 Database System) in the University of Melbourne in 2016, which required students to write a very simple web app in PHP, without using any frameworks (neither frontend js framework nor backend php framework). The curious student was very confused and did not understand why framework is not allowed (the answer from lecturer was he wanted to see student rendering the html with PHP). I like things to be done in a managable way, it needs to be quick to build, but still managable.
 
 I spent a few days to hack up a very minimal MVC framework, which is not throughly tested and not production ready. It is 100% assignment purpose, which contains 4 php pages (if build separately without using a frameworks.)
 
