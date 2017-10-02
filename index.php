@@ -95,7 +95,7 @@ if(!$matched){
 	exit("not found<br>\n");
 }
 
-echo '<div class="hidden">'."\n";
+/* echo '<div class="hidden">'."\n";
 
 echo 'matched with ' . $matched_router->get_str() . "<br>\n";
 echo 'with following params<br>'."\n";
@@ -108,7 +108,7 @@ foreach ($params as $key => $value) {
 echo 'using controller method ' . $matched_router->get_controller_method() . "<br>\n";
 
 echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] . "<br>\n";
-echo "</div>\n";
+echo "</div>\n"; */
 
 $matched_router->inject_params($params);
 $matched_router->run_method();
